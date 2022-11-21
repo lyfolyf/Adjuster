@@ -1,0 +1,275 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{7690A234-D554-42F9-A102-CF6A18D26204}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Adjuster</RootNamespace>
+    <AssemblyName>Adjuster</AssemblyName>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>ModifiedTelespace.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Bing.Viewer, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Bing.Viewer 5.0\Bing.Viewer\bin\x86\Debug\Bing.Viewer.dll</HintPath>
+    </Reference>
+    <Reference Include="MvCameraControl.Net, Version=3.4.0.1, Culture=neutral, PublicKeyToken=52fddfb3f94be800, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\MvCameraControl.Net.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>F:\Bing\JsonSerializeDemo\JsonSerializeDemo\bin\Debug\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Camera\BalanceConfig.cs" />
+    <Compile Include="Camera\CameraInfo.cs" />
+    <Compile Include="Camera\HikCamera.cs" />
+    <Compile Include="Camera\ImageTookEventArgs.cs" />
+    <Compile Include="Camera\MyCamera.cs" />
+    <Compile Include="FrmMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMain.Designer.cs">
+      <DependentUpon>FrmMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Light\BaseLightConfig.cs" />
+    <Compile Include="Light\ComConfig.cs" />
+    <Compile Include="Light\ControllerCreater.cs" />
+    <Compile Include="Light\ILightConfig.cs" />
+    <Compile Include="Light\ILightController.cs" />
+    <Compile Include="Light\JL\JLFast.cs" />
+    <Compile Include="Light\Rsee\RseeFast.cs" />
+    <Compile Include="Light\Rsee\RseeMatrix.cs" />
+    <Compile Include="Light\Rsee\RseePMC.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Tools\AsmLoader.cs" />
+    <Compile Include="Tools\IntensityInfo.cs" />
+    <Compile Include="Tools\ILog.cs" />
+    <Compile Include="Tools\ImageProcessing.cs" />
+    <Compile Include="Tools\LockBitmap.cs" />
+    <Compile Include="Tools\Serialize.cs" />
+    <Compile Include="UC\AdvancedViewer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC\AdvancedViewer.designer.cs">
+      <DependentUpon>AdvancedViewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC\FrmAddNewRectRoi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UC\FrmAddNewRectRoi.designer.cs">
+      <DependentUpon>FrmAddNewRectRoi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC\FrmShowHotmap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UC\FrmShowHotmap.designer.cs">
+      <DependentUpon>FrmShowHotmap.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC\HeatMapViewer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC\RoiStorage.cs" />
+    <Compile Include="UC\UcAreaSelect.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC\UcAreaSelect.designer.cs">
+      <DependentUpon>UcAreaSelect.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC\UcCamera.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC\UcCamera.Designer.cs">
+      <DependentUpon>UcCamera.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC\UcHistogramRGB.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC\UcHistogramRGB.Designer.cs">
+      <DependentUpon>UcHistogramRGB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC\UcImageViewer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC\UcImageViewer.Designer.cs">
+      <DependentUpon>UcImageViewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC\UcIntensityInfo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC\UcIntensityInfo.Designer.cs">
+      <DependentUpon>UcIntensityInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC\UcLocation.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC\UcLocation.Designer.cs">
+      <DependentUpon>UcLocation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC\UcCoord.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC\UcCoord.designer.cs">
+      <DependentUpon>UcCoord.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC\UcFocus.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC\UcFocus.designer.cs">
+      <DependentUpon>UcFocus.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC\UcHistogram.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC\UcHistogram.designer.cs">
+      <DependentUpon>UcHistogram.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC\UcPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC\UcPanel.Designer.cs">
+      <DependentUpon>UcPanel.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="FrmMain.resx">
+      <DependentUpon>FrmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="UC\AdvancedViewer.resx">
+      <DependentUpon>AdvancedViewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC\FrmAddNewRectRoi.resx">
+      <DependentUpon>FrmAddNewRectRoi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC\FrmShowHotmap.resx">
+      <DependentUpon>FrmShowHotmap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC\HeatMapViewer.resx">
+      <DependentUpon>HeatMapViewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC\UcAreaSelect.resx">
+      <DependentUpon>UcAreaSelect.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC\UcCamera.resx">
+      <DependentUpon>UcCamera.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC\UcCoord.resx">
+      <DependentUpon>UcCoord.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC\UcFocus.resx">
+      <DependentUpon>UcFocus.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC\UcHistogram.resx">
+      <DependentUpon>UcHistogram.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC\UcHistogramRGB.resx">
+      <DependentUpon>UcHistogramRGB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC\UcIntensityInfo.resx">
+      <DependentUpon>UcIntensityInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC\UcLocation.resx">
+      <DependentUpon>UcLocation.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Matching\IMatching.csproj">
+      <Project>{b38d3098-4ff9-4fb3-8ed0-3bfd205fa4e9}</Project>
+      <Name>IMatching</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ModifiedTelespace.ico" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
